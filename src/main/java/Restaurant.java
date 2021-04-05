@@ -69,5 +69,17 @@ public class Restaurant {
     }
 
 
+    public int getTotalAmount(List<String> itemName) {
+        int totalAmount = 0;
+        List<Item> selectedItems;
+        selectedItems = new ArrayList<Item>();
+        for (String name : itemName) {
+            selectedItems.add(findItemByName(name));
+        }
+        for (int i = 0; i < selectedItems.size(); i++) {
+            totalAmount = totalAmount + selectedItems.get(i).getPrice();
+        }
+        return totalAmount;
+    }
 
 }

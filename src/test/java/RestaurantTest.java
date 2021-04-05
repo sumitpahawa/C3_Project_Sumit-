@@ -74,7 +74,17 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Test
     public void verify_the_total_cost_of_selected_items() {
-
+        List<String> itemName = new ArrayList<>();
+        itemName.add("Sweet corn soup");
+        itemName.add("Vegetable lasagne");
+        LocalTime openingTime = LocalTime.parse("10:30:00");
+        LocalTime closingTime = LocalTime.parse("22:00:00");
+        restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
+        Item item = new Item("Sweet corn soup", 119);
+        Item item1 = new Item("Vegetable lasagne", 269);
+        restaurant.addToMenu(item.getName(), item.getPrice());
+        restaurant.addToMenu(item1.getName(), item1.getPrice());
+        assertEquals(restaurant.getTotalAmount(itemName), 388);
 
 
     }
