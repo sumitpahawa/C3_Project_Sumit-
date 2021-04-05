@@ -16,7 +16,7 @@ class RestaurantTest {
     //-------FOR THE 2 TESTS BELOW, YOU MAY USE THE CONCEPT OF MOCKING, IF YOU RUN INTO ANY TROUBLE
     @Test
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time() {
-        LocalTime openingTime = LocalTime.parse("11:20:00");
+        LocalTime openingTime = LocalTime.parse("10:20:00");
         LocalTime closingTime = LocalTime.parse("22:00:00");
         restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
         assertTrue(LocalTime.now().isAfter(openingTime) && LocalTime.now().isBefore(closingTime));
@@ -27,7 +27,7 @@ class RestaurantTest {
         LocalTime openingTime = LocalTime.parse("22:30:00");
         LocalTime closingTime = LocalTime.parse("23:00:00");
         restaurant = new Restaurant("Amelie's cafe", "Chennai", openingTime, closingTime);
-        assertTrue(LocalTime.now().isBefore(openingTime) || LocalTime.now().isAfter(closingTime));
+        assertTrue(LocalTime.now().isBefore(openingTime) && LocalTime.now().isAfter(closingTime));
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -72,7 +72,12 @@ class RestaurantTest {
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void verify_the_total_cost_of_selected_items() {
 
+
+
+    }
 
 
 }
