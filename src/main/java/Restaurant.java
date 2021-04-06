@@ -18,7 +18,7 @@ public class Restaurant {
     }
 
     public boolean isRestaurantOpen() {
-        if (getCurrentTime().isAfter(closingTime))
+        if (getCurrentTime().isBefore(openingTime) && getCurrentTime().isAfter(closingTime) )
             return false;
         else
             return true;
@@ -67,7 +67,7 @@ public class Restaurant {
     public String getName() {
         return name;
     }
-
+  
 
     public int getTotalAmount(List<String> itemName) {
         int totalAmount = 0;

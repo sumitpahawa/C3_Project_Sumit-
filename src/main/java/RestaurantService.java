@@ -11,10 +11,12 @@ public class RestaurantService {
             if (restaurants.get(i).getName().equals(restaurantName)) {
                 restaurant = restaurants.get(i);
                 break;
-            }else
+            }else {
                 return null;
+            }
         }
         return restaurant;
+
     }
 
 
@@ -24,7 +26,7 @@ public class RestaurantService {
         return newRestaurant;
     }
 
-    public Restaurant removeRestaurant(String restaurantName) throws restaurantNotFoundException {
+    public Restaurant removeRestaurant(String restaurantName) throws restaurantNotFoundException{
         Restaurant restaurantToBeRemoved = findRestaurantByName(restaurantName);
         restaurants.remove(restaurantToBeRemoved);
         return restaurantToBeRemoved;
